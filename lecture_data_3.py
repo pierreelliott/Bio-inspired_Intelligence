@@ -50,11 +50,11 @@ if __name__ == '__main__':
     # on crée le lecteur de la base de données de test (pour torch)
     test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=1, shuffle=False)
     # 10 fois
-    for i in range(0,10):
+#    for i in range(0,10):
         # on demande les prochaines données de la base
-        (_,(image,label)) = enumerate(train_loader).__next__()
+#        (_,(image,label)) = enumerate(train_loader).__next__()
         # on les affiche
-        affichage(image[0,:].numpy(),label[0,:].numpy())
-    # NB pour lire (plus proprement) toute la base (ce que vous devrez faire dans le TP) plutôt utiliser la formulation suivante
-#    for image,label in train_loader:
 #        affichage(image[0,:].numpy(),label[0,:].numpy())
+    # NB pour lire (plus proprement) toute la base (ce que vous devrez faire dans le TP) plutôt utiliser la formulation suivante
+    for image,label in train_loader:
+        affichage(image[0,:].numpy(),label[0,:].numpy())
